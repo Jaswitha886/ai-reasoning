@@ -1,0 +1,7 @@
+A resume analyzer evaluates a candidate’s skills, experience, and education.
+
+Skill gaps are identified by comparing resume content with job role requirements.
+
+Suggestions may include learning new technologies, improving projects, or gaining practical experience.
+
+Interview questions are often generated based on identified strengths and weaknesses.

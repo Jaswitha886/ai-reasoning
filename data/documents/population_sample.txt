@@ -1,0 +1,5 @@
+According to the 2011 Census of India, the total population of India was approximately 1.21 billion.
+
+The male population was about 623 million, and the female population was about 586 million.
+
+Population data can become outdated, so systems should verify freshness before using it for current decisions.

@@ -1,0 +1,7 @@
+Large Language Models (LLMs) are neural networks trained on large text datasets to predict the next token in a sequence.
+
+Agentic AI systems use multiple agents that each have specific roles such as planning, retrieval, verification, and summarization.
+
+Instead of a single prompt, agents collaborate by passing intermediate results to each other.
+
+This architecture improves reasoning, modularity, and control over AI systems.

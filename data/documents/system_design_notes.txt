@@ -1,0 +1,5 @@
+Good system design focuses on separation of concerns, modularity, and scalability.
+
+Backend services should handle logic, while APIs should only route requests.
+
+AI systems benefit from clear orchestration layers that control when models, retrieval, or tools are used.

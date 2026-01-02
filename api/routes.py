@@ -1,10 +1,12 @@
 from fastapi import APIRouter
-from services.reasoning_service import run_reasoning_pipeline
+from services.reasoning_service import verify_answer
 
 router = APIRouter()
 
-@router.post("/query")
-def query_ai(payload: dict):
-    question = payload.get("query")
-    result = run_reasoning_pipeline(question)
-    return result
+@router.post("/verify")
+def verify(payload: dict):
+    question = payload.get("question")
+    if not question:
+        return {"error": "question is required"}
+
+    return verify_answer(question)

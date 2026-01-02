@@ -1,6 +1,9 @@
 fastapi
 uvicorn
-requests
-chromadb
-sentence-transformers
+langchain
+langchain-community
+faiss-cpu
 pypdf
+requests
+python-dotenv
+streamlit

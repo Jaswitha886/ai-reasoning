@@ -1,6 +1,5 @@
-from sentence_transformers import SentenceTransformer
+from langchain_community.embeddings import OllamaEmbeddings
+from config.settings import EMBEDDING_MODEL
 
-model = SentenceTransformer("all-MiniLM-L6-v2")
-
-def embed_text(text: str):
-    return model.encode(text).tolist()
+def get_embedder():
+    return OllamaEmbeddings(model=EMBEDDING_MODEL)

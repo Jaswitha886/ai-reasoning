@@ -1,8 +1,5 @@
-from pypdf import PdfReader
+from langchain_community.document_loaders import PyPDFLoader
 
-def extract_pdf_text(file_path: str) -> str:
-    reader = PdfReader(file_path)
-    text = ""
-    for page in reader.pages:
-        text += page.extract_text() or ""
-    return text
+def load_pdf(path: str):
+    loader = PyPDFLoader(path)
+    return loader.load()

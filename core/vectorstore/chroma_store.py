@@ -1,22 +1,19 @@
-import chromadb
-from chromadb.config import Settings
+from langchain_community.vectorstores import Chroma
+from core.embeddings.embedder import get_embedder
 
-client = chromadb.Client(
-    Settings(persist_directory="./chroma_db")
-)
+_vectorstore = None
 
-collection = client.get_or_create_collection("documents")
-
-def add_document(doc_id: str, text: str, embedding: list):
-    collection.add(
-        documents=[text],
-        embeddings=[embedding],
-        ids=[doc_id]
+def build_vectorstore(documents, persist_dir="./chroma_db"):
+    global _vectorstore
+    embeddings = get_embedder()
+    _vectorstore = Chroma.from_documents(
+        documents,
+        embedding=embeddings,
+        persist_directory=persist_dir
     )
+    return _vectorstore
 
-def query_documents(query_embedding: list, top_k: int = 3):
-    results = collection.query(
-        query_embeddings=[query_embedding],
-        n_results=top_k
-    )
-    return results["documents"][0]
+def get_vectorstore():
+    if _vectorstore is None:
+        raise RuntimeError("Vectorstore not initialized")
+    return _vectorstore
